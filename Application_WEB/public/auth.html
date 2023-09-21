@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JJ Mart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+  rel="stylesheet" 
+  integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="/fontawesome/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="./img/favicon.ico" thpe="image/x-icon">
+  <script src="main.js" defer></script>
+  <style>
+  /* 모바일 화면 */
+  @media (max-width: 768px) {
+    .formbox  {
+        width: 90%;
+        margin: 20px;
+      }
+    }   
+    </style>
+</head>
+<body>
+  <header>
+
+    <div class="container-fluid">
+        <div class="navb-logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+        <div class="navb-items d-none d-xl-flex">
+            <div class="item">
+                <a href="/index.html">Home</a>
+            </div>
+            <div class="item">
+                <a href="/checkout.html">Checkout</a>
+            </div>
+            <div class="item">
+                <a href="/admin.html">Administrator</a>
+            </div>
+            <div class="item-button">
+                <a href="/auth.html" type="button">Login</a>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <div class="mobile-toggler d-lg-none">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="navbModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <img src="/img/logo-variant.png" alt="Logo">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="modal-body">
+                        
+                        <div class="modal-line">
+                            <i class="fa-solid fa-house"></i><a href="/index.html">Home</a>
+                        </div>
+
+                        <div class="modal-line">
+                            <i class="fa-solid fa-cart-shopping"></i><a href="/checkout.html">Checkout</a>
+                        </div>
+
+                        <div class="modal-line">
+                            <i class="fa-solid fa-toolbox"></i><a href="/admin.html">Administrator</a>
+                        </div>
+
+                        <a href="/auth.html" class="navb-button" type="button">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class ="formbox mt-5">
+  <div class="row justify-content-center align-items-center inner-row">
+    <div class="col-md-5">
+      <div class="form-box login-form p-5 border-0 shadow">
+        <div class="form-title">
+         <h2 class="fw-bold mb-3">Login</h2>
+        </div>
+         <form>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control form-control-sm floatingInput" placeholder="Email" id="loginEmail">
+            <label for="floatingInput">Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control form-control-sm floatingInput" placeholder="Password" id="loginPassword">
+            <label for="floatingInput">Password</label>
+          </div>
+          <div class="mt-3">
+            <button type="submit" class="btn primaryBg" id="login">Login</button>
+          </div>
+         </form>
+         <div class="mt-3">
+          <span>회원가입이 필요하신가요?</span> <button class="p-0 border-0 bg-transparent primaryColor signup-show">Sign Up</button>
+         </div>
+      </div>
+
+      <div class="form-box signup-form p-5 border-0 shadow">
+        <div class="form-title">
+         <h2 class="fw-bold mb-3">Creat Your Account</h2>
+        </div>
+         <form>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control form-control-sm floatingInput" placeholder="User Name" id="signupName">
+            <label for="floatingInput">User Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control form-control-sm floatingInput" placeholder="Email" id="signupEmail">
+            <label for="floatingInput">Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control form-control-sm floatingInput" placeholder="Password" id="signupPassword">
+            <label for="floatingInput">Password</label>
+          </div>
+          <div class="mt-3">
+            <button type="submit" class="btn primaryBg" id = "signup">Sign Up</button>
+          </div>
+         </form>
+         <div class="mt-3">
+          <span>계정이 있으신가요?</span> <button class="p-0 border-0 bg-transparent primaryColor login-show">Login</button>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script
+  src="https://code.jquery.com/jquery-3.6.4.min.js"
+  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+  crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+  <script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+</html>
